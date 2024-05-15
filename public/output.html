@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match Output</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #140e2f;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        /* Match Heading */
+        #match-heading {
+            text-align: center;
+            font-size: 70px;
+            margin-top: 30px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            margin-bottom: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            animation: fadeInDown 1s ease;
+        }
+
+        /* Match Photo */
+        #match-photo {
+            display: block;
+            margin: 0 auto;
+            max-width: 300px;
+            max-height: 300px;
+            border: 2px solid #e0e1dd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Match Name */
+        #match-name {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+     
+
+/* Email Option */
+#send-email {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #e0e1dd;
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    position: relative;
+    animation: fadeInUp 1s ease;
+}
+
+#send-email:hover {
+    text-decoration: underline; /* Underline only on hover */
+}
+
+#send-email::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #e0e1dd;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#send-email:hover::after {
+    opacity: 1;
+}
+
+        /* Button Container */
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        /* Buttons */
+        .logout-btn,
+        .find-match-btn {
+            background-color: #e0e1dd;
+            color: #413e4f;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+            text-shadow: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .logout-btn:hover,
+        .find-match-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Star Background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, #e0e1dd 1px, transparent 1px),
+                radial-gradient(circle, #e0e1dd 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .brandtext {
+            font-size: 40px;
+            color: white;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            text-align: left; /* Align brand text to the left */
+            animation: fadeInDown 1s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body onload="displayMatch()">
+    <div class="site-name brandtext">Clover</div>
+    <div class="button-container">
+        <button class="find-match-btn" type="button" onclick="input()">Try Again</button>
+        <button class="logout-btn" type="button" onclick="logout()">Logout</button>
+    </div>
+    <div id="match-heading">IT'S A MATCH</div>
+    <img id="match-photo" src="" alt="Match Photo">
+    <div id="match-name"></div>
+    <div id="send-email" onclick="sendEmail()">Send them an email</div>
+
+    <script>
+        let perfectMatch;
+
+        function displayMatch() {
+            perfectMatch = JSON.parse(localStorage.getItem('perfectMatch'));
+            const matchPhoto = document.getElementById('match-photo');
+            const matchName = document.getElementById('match-name');
+
+            matchPhoto.src = perfectMatch.Photo;
+            matchName.textContent = perfectMatch.Name;
+        }
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        function input() {
+            window.location.href = "input.html";
+        }
+
+        function sendEmail() {
+            const matchEmail = perfectMatch.Email;
+            const mailtoLink = `mailto:${matchEmail}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Carousel</title>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+   body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #362256;
+      color: #fff;
+    }
+
+    .carousel {
+      margin: 80px auto;
+      width: 80%;
+      height: 70vh;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      position: relative;
+      background-color: #2b2d42;
+    }
+
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #2b2d42;
+      overflow: hidden;
+      position: relative;
+      padding: 2rem;
+      box-sizing: border-box;
+      opacity: 0.5;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carousel-item.active {
+      opacity: 1;
+    }
+
+    .carousel-item .item-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-item .image-container {
+      flex: 1;
+      max-width: 40%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s ease-in-out;
+      position: relative;
+    }
+
+    .carousel-item.active .image-container {
+      transform: scale(1.1);
+    }
+
+    .carousel-item .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-item .content {
+      flex: 1;
+      max-width: 40%;
+      padding: 1rem;
+      margin-left: 2rem;
+      background-color: #333645;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      position: relative;
+    }
+
+    .carousel-item.active .content {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .content h3 {
+      font-size: 2em;
+      margin: 0;
+      color:#fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .content p {
+      font-family: cursive;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(140, 122, 230, 0.5);
+      color: #fff;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .carousel-prev:hover,
+    .carousel-next:hover {
+      background-color: rgba(140, 122, 230, 0.8);
+    }
+
+    .carousel-prev {
+      left: 2rem;
+    }
+
+    .carousel-next {
+      right: 2rem;
+    }
+
+    .carousel-prev::before,
+    .carousel-next::before {
+      content: "";
+      display: inline-block;
+      width: 0.6rem;
+      height: 0.6rem;
+      border: solid #fff;
+      border-width: 0 0.1rem 0.1rem 0;
+      padding: 0.1rem;
+    }
+
+    .carousel-prev::before {
+      transform: rotate(135deg);
+    }
+
+    .carousel-next::before {
+      transform: rotate(-45deg);
+    }
+
+    .main-heading {
+      text-align: center;
+      font-size: 2.5rem;
+      color:#fff;
+      text-shadow: 0 0 10px rgba(245, 59, 87, 0.5);
+      margin-top: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+ 
+    .like-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    .liked {
+      color: #ff4d4d;
+    }
+
+    .heart-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #ff4d4d;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+  animation: heartAnimation 1s ease-in-out;
+  transition: transform 0.3s ease-in-out; 
+}
+@keyframes heartAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5); 
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2); 
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5); 
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2); /* Decrease the scale */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+.button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.logout-btn,
+.find-match-btn {
+  background-color: #e0e1dd;
+  color: #413e4f;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+  text-shadow: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  font-size: 15px;
+
+}
+
+.logout-btn:hover,
+.find-match-btn:hover {
+  background-color:#333;
+  color: #fff;
+}
+.brandtext {
+      font-size: 40px;
+      color: white;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-family: Arial, sans-serif;
+      font-style: italic;
+      text-align: left; 
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="site-name brandtext">Clover</div>
+ 
+  <div class="button-container">
+    <button class="logout-btn" type="submit" onclick="logout()">Logout</button>
+    <button class="find-match-btn" type="submit" onclick="input()">Find a match</button>
+  </div>
+  <h1 class="main-heading">Scroll through profiles and like your favourites</h1>
+ 
+  <div class="carousel">
+    <div class="carousel-inner">
+      <!-- Carousel items will be dynamically generated here -->
+    </div>
+    <button class="carousel-prev"></button>
+    <button class="carousel-next"></button>
+  </div>
+
+  <script >
+   
+   function getUsername() {
+    
+    
+     //username is retrieved from local storage
+      const usernameFromStorage = localStorage.getItem('username');
+
+      if (usernameFromStorage) {
+        return usernameFromStorage;
+      }
+
+      // If the username is not found, return an empty string
+      return '';
+    }
+  //Get the liked profiles linked with the username from likedProfiles.json
+    function fetchLikedProfiles(username) {
+  fetch(`/api/liked-profiles?username=${encodeURIComponent(username)}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 404) {
+          // Handle the case where the server returns a 404 (Not Found) error
+          return { [username]: [] };
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      }
+      return response.json();
+    })
+    .then(data => {
+      const likedProfiles = data[username] || [];
+      // Update the liked buttons based on the fetched liked profiles
+      const likeBtns = document.querySelectorAll('.like-btn');
+      likeBtns.forEach(btn => {
+        const profileName = btn.parentElement.textContent.trim();
+        btn.classList.toggle('liked', likedProfiles.includes(profileName));
+      });
+    })
+    .catch(error => console.error('Error:', error));
+}
+  
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const username = getUsername();
+      fetch('students.json')
+        .then(response => response.json())
+        .then(data => {
+          // Populate the carousel with student data
+          const carouselInner = document.querySelector('.carousel-inner');
+          Object.values(data).forEach((student, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            carouselItem.innerHTML = `
+              <div class="item-container">
+                <div class="image-container">
+                  <img src="${student['Photo']}" alt="${student['Name']}">
+                </div>
+                <div class="content">
+                  <h3>${student['Name']}<button class="like-btn">&#10084;</button></h3>
+                  <p>${student['para']}</p>
+                </div>
+              </div>
+            `;
+            carouselInner.appendChild(carouselItem);
+          });
+
+          // Implement the carousel functionality
+          const carouselPrevBtn = document.querySelector('.carousel-prev');
+          const carouselNextBtn = document.querySelector('.carousel-next');
+          const carouselItems = document.querySelectorAll('.carousel-item');
+
+          let currentIndex = 0;
+          const itemCount = carouselItems.length;
+
+          function showImage(index) {
+            carouselItems.forEach(item => item.classList.remove('active'));
+            carouselItems[index].classList.add('active');
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+          }
+
+          carouselPrevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+            showImage(currentIndex);
+          });
+
+          carouselNextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % itemCount;
+            showImage(currentIndex);
+          });
+
+          const intervalTime = 12000; //after 12 secs carousel moves to next profile by itself
+          setInterval(() => {
+            currentIndex = (currentIndex + 1) % itemCount;
+            showImage(currentIndex);
+          }, intervalTime);
+
+          // Add event listener for "like" buttons
+          const likeBtns = document.querySelectorAll('.like-btn');
+
+          likeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              toggleLike(btn, username);
+            });
+          });
+
+          const imageContainers = document.querySelectorAll('.image-container');
+
+          imageContainers.forEach(container => {
+            container.addEventListener('dblclick', () => {
+              const btn = container.parentElement.querySelector('.like-btn');
+              toggleLike(btn, username);
+            });
+          });
+
+          // Show the first item initially
+          showImage(0);
+
+          // Fetch liked profiles for the current username
+          fetchLikedProfiles(username);
+        })
+        .catch(error => console.error('Error:', error));
+    });
+//if profiles is liked toggleLike function is triggered it triggers heart animation and adds liked class to heart to make it red
+    function toggleLike(btn, username) {
+      btn.classList.toggle('liked');
+
+      const itemContainer = btn.closest('.item-container');
+      if (!itemContainer) {
+        console.error('Could not find the parent .item-container element');
+        return;
+      }
+
+      const imageContainer = itemContainer.querySelector('.image-container');
+      if (!imageContainer) {
+        console.error('Could not find the .image-container element');
+        return;
+      }
+
+      if (btn.classList.contains('liked')) {
+        createHeartAnimation(imageContainer);
+      }
+
+      saveLikedProfiles(username);
+    }
+//if userr likes some profile then info is updated to likedProfiles.json
+    function saveLikedProfiles(username) {
+      const likedProfiles = Array.from(document.querySelectorAll('.liked'))
+        .map(btn => btn.parentElement.textContent.trim());
+
+      fetch('/api/liked-profiles', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, likedProfiles })
+      })
+      .catch(error => console.error('Error:', error));
+    }
+
+    function createHeartAnimation(container) {
+      const heartAnimation = document.createElement('div');
+      heartAnimation.classList.add('heart-animation');
+      heartAnimation.textContent = '❤️';
+      container.appendChild(heartAnimation);
+
+      setTimeout(() => {
+        heartAnimation.remove();
+      }, 1000);
+    }
+    function logout(){
+      window.location.href="index.html";
+    }
+    function input(){
+      window.location.href="input.html";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dating Profile Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('changebg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}   
+header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            color: white;
+            z-index: 1;
+        }
+
+        .site-name {
+            font-size: 24px;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
+            margin-right: auto; /* Push the site name to the right */
+        }
+
+        .brandtext {
+            font-size: 40px;
+            color: white;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            margin-right: 1100px; 
+        }
+
+        .login-btn {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-btn {
+            margin-right: 8px;
+        }
+
+        .login-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+form {
+    background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+  padding:30px;
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease, formBgAnimation 10s infinite;
+    
+    background-size: 200% 200%;
+}
+
+        @keyframes formBgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+        h2 {
+            text-align: center;
+            color:#cc5387;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          font-family: Arial, Helvetica, sans-serif;
+            font-size: 36px;
+            animation: headingGlow 3s infinite;
+        }
+        @keyframes headingGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+    }
+}
+
+        #labels {
+            display: block;
+            margin-bottom: 10px;
+            color:rgba(234, 185, 239, 0.814);
+            font-weight: 700;
+            animation: labelSlide 1s ease;
+        }
+
+        @keyframes labelSlide {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            animation: inputSlide 1s ease;
+        }
+        
+@keyframes inputSlide {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+        input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder {
+    animation: placeholderShift 2s infinite;
+}
+
+@keyframes placeholderShift {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+            animation: inputFocus 0.5s;
+        }
+        @keyframes inputFocus {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+        .inline {
+            display: inline-block;
+            margin-right: 20px;
+            animation: fadeInLeft 1s ease;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+    animation: checkboxHover 0.3s;
+}
+
+@keyframes checkboxHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            animation: fileSlide 1s ease;
+        }
+        
+@keyframes fileSlide {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+        button[type="submit"] {
+            background-color: #e74c3c;
+            
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease,transform 0.3 ease;
+            animation: pulse 2s infinite;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .interest-button , .hobby-button{
+            background-color: #f5f5f5;
+            border: none;
+            color: #333;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .interest-button.active, .hobby-button.active {
+            background-color:#ca93e7; 
+            color: white;
+        }
+        
+        .gender-button {
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            color: #333;
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gender-button.active {
+            background-color: #333;
+            color: white;
+            border-color: #333;
+        }
+        .form-control-file.is-invalid ~ #image-error {
+  display: block;
+}
+
+.invalid-feedback {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none; /* Hide the error message by default */
+        }
+
+        .preference-button {
+    background-color: #f5f5f5;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.preference-button.active {
+    background-color: #ca93e7; 
+    color: white;
+}
+.preference-button.selected {
+    background-color: #f0f0f0;
+}
+
+.preference-number {
+    background-color: rgba(255, 255, 255, 0.5); 
+    color: #333; 
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+
+    </style>
+</head>
+<header>
+    <div class="site-name brandtext">Clover</div>
+    <button class="login-btn" onclick="openprofiles()">
+     Profiles
+    </button>
+    <button class="login-btn" onclick="closeinput()">
+      Logout
+    </button>
+  </header>
+
+<body>
+    <form >
+        <h2>Create Your Dating Profile</h2>
+        <label for="rollNumber" style="font-size: 25px;" id="labels"><b>IITB Roll Number</b></label>
+        <input type="text" id="rollNumber" name="rollNumber" placeholder="Enter your IITB Roll Number" required>
+
+        <label for="name" style="font-size:25px;" id="labels"><b>Name</b></label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="year" style="font-size:  25px;" id="labels"><b>Year of Study</b></label>
+        <input type="text" id="year" name="year" placeholder="Enter your year of study" required>
+
+        <label for="age" style="font-size:  25px;" id="labels"> <b>Age</b></label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+        <label style="font-size: 25px; text-align: center;" id="labels"><b>Gender</b></label>
+        <div id="gender-container">
+            <button type="button" class="gender-button" data-gender="Male">Male</button>
+            <button type="button" class="gender-button" data-gender="Female">Female</button>
+            <button type="button" class="gender-button" data-gender="Other">Other</button>
+        </div>
+        <input type="hidden" name="gender" id="selected-gender" value="" required>
+
+        <label style="font-size:  25px; text-align: center; margin-top: 20px;" id="labels"><b>Interests</b></label>
+        <div id="hobbies container">
+            <button type="button" class="interest-button" data-interest="Traveling" >Traveling</button>
+            <button type="button" class="interest-button" data-interest="Sports"  >Sports</button>
+            <button type="button" class="interest-button" data-interest="Movies"  >Movies</button>
+            <button type="button" class="interest-button" data-interest="Music"  >Music</button>
+            <button type="button" class="interest-button" data-interest="Literature"  >Literature</button>
+            <button type="button" class="interest-button" data-interest="Technology"  >Technology</button>
+            <button type="button" class="interest-button" data-interest="Fashion"  >Fashion</button>
+            <button type="button" class="interest-button" data-interest="Art"  >Art</button>
+           
+        </div>
+        <input type="hidden" name="interests" id="selected-interests" value="" required>
+
+        <label style="font-size: 25px; text-align: center; margin-top: 20px;" id="labels"><b>Hobbies</b></label>
+        <div id="hobbies-container">
+            <button type="button" class="hobby-button" data-hobby="Reading">Reading</button>
+            <button type="button" class="hobby-button" data-hobby="Cooking">Cooking</button>
+            <button type="button" class="hobby-button" data-hobby="Coding">Coding</button>
+            <button type="button" class="hobby-button" data-hobby="Gardening">Gardening</button>
+            <button type="button" class="hobby-button" data-hobby="Painting">Painting</button>
+            <button type="button" class="hobby-button" data-hobby="Watching YouTube/Instagram">Watching YouTube/Instagram</button>
+            <button type="button" class="hobby-button" data-hobby="Playing musical instruments">Playing musical instruments</button>
+            <button type="button" class="hobby-button" data-hobby="Photography">Photography</button>
+        </div>
+        <input type="hidden" name="hobbies" id="selected-hobbies" value="" required>
+        <label style="font-size: 25px; text-align: center; margin-top: 20px;" id="labels"><b>Preference order</b></label>
+               <div id="preference-order-container">
+            <button type="button" class="preference-button" data-preference="Interests"><span class="preference-number"></span>Interests</button>
+            <button type="button" class="preference-button" data-preference="Hobbies"><span class="preference-number"></span>Hobbies</button>
+            <button type="button" class="preference-button" data-preference="Age"><span class="preference-number"></span>Age</button>
+            <button type="button" class="preference-button" data-preference="Year of Study"><span class="preference-number"></span>Year of Study</button>
+        </div>
+        
+        <label for="email" style="margin-top: 20px; font-size: 25px;" id="labels"><b>Email</b></label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <label for="photo" style="font-size: 25px;" id="labels"><b>Photo</b></label>
+        <input type="file" id="photo" name="photo" accept="image/png, image/jpeg" required>
+        <div class="invalid-feedback" id="image-error">
+            Please select a valid image file (PNG or JPG).
+        </div>
+        <div id="image-container" style="margin-top: 20px;margin-bottom: 20px;"></div>
+    <button type="submit" style="display: block; margin: 20px auto;" onclick="match(event)">Find me a match</button>
+</form>
+</body>
+<script>
+    //if profiles button is clicked 
+    function openprofiles(){
+    window.location.href="scroll.html";
+   }
+   //if logout button is clicked
+   function closeinput(){
+      
+      window.location.href="index.html";
+  }
+   const interestButtons = document.querySelectorAll('.interest-button');
+   const selectedInterestsInput = document.getElementById('selected-interests');
+  //when some interest/hobby button is clicked it is pushed iin active class and css is added accordingly and final selected interests/hobbies are stored in array
+   interestButtons.forEach(button => {
+       button.addEventListener('click', () => {
+           button.classList.toggle('active');
+           const selectedInterests = Array.from(interestButtons)
+               .filter(btn => btn.classList.contains('active'))
+               .map(btn => btn.dataset.interest);
+           selectedInterestsInput.value = selectedInterests.join(',');
+       });
+   });
+   const hobbyButtons = document.querySelectorAll('.hobby-button');
+       const selectedHobbiesInput = document.getElementById('selected-hobbies');
+
+       hobbyButtons.forEach(button => {
+           button.addEventListener('click', () => {
+               button.classList.toggle('active');
+               const selectedHobbies = Array.from(hobbyButtons)
+                   .filter(btn => btn.classList.contains('active'))
+                   .map(btn => btn.dataset.hobby);
+               selectedHobbiesInput.value = selectedHobbies.join(',');
+           });
+       });
+       //to handle clicking of gender buttons
+       const genderButtons = document.querySelectorAll('.gender-button');
+       const selectedGenderInput = document.getElementById('selected-gender');
+
+genderButtons.forEach(button => {
+   button.addEventListener('click', () => {
+       genderButtons.forEach(btn => btn.classList.remove('active'));
+       button.classList.add('active');
+       selectedGenderInput.value = button.dataset.gender;
+   });
+});
+        // Function to check if the selected file is an image
+        async function isImageFile(file) {
+       const allowedMimeTypes = ['image/png', 'image/jpeg'];
+       const fileType = await file.type;
+       return allowedMimeTypes.includes(fileType);
+   }
+
+
+   // Function to handle file input change and display selected image
+   async function displaySelectedImage() {
+       const file = photoInput.files[0];
+       if (file && await isImageFile(file)) {
+           // Display selected image if it's a valid image file
+           const img = document.createElement('img');
+           img.src = URL.createObjectURL(file);
+           img.style.maxWidth = '300px';
+           img.style.maxHeight = '200px';
+           img.style.marginRight = '20px';
+           imageContainer.innerHTML = '';
+           imageContainer.appendChild(img);
+           photoInput.classList.remove('is-invalid');
+           imageError.style.display = 'none';
+       } else {
+           // Display error message if it's not a valid image file
+           imageContainer.innerHTML = '';
+           photoInput.classList.add('is-invalid');
+           imageError.style.display = 'block';
+           photoInput.value = ''; // Clear the file input
+       }
+   }
+
+   // Add event listener for file input change
+   const photoInput = document.getElementById('photo');
+   const imageError = document.getElementById('image-error');
+   const imageContainer = document.getElementById('image-container');
+
+   photoInput.addEventListener('change', displaySelectedImage);
+
+
+  
+   const preferenceButtons = document.querySelectorAll('.preference-button');
+
+let currentPreferenceNumber = 1;
+let selectedButtons = [];
+//if some button in preference button is reclicked then all buttons are reset
+function resetPreferenceButtons() {
+   preferenceButtons.forEach(btn => {
+       btn.classList.remove('selected');
+       btn.querySelector('.preference-number').textContent = '';
+   });
+   currentPreferenceNumber = 1;
+   selectedButtons = [];
+}
+//preference number is displayed beside selected attribute
+preferenceButtons.forEach(button => {
+   const preferenceNumber = button.querySelector('.preference-number');
+
+   button.addEventListener('click', () => {
+       if (selectedButtons.includes(button)) {
+           // If the clicked button is already selected, reset all buttons
+           resetPreferenceButtons();
+       } else {
+           // If a different button is clicked, assign the preference number without deselecting previous buttons
+           button.classList.add('selected');
+           preferenceNumber.textContent = currentPreferenceNumber;
+           currentPreferenceNumber++;
+           selectedButtons.push(button);
+       }
+   });
+});
+function retrievePreferenceOrder() {
+   const preferenceOrder = selectedButtons.map(button => {
+       return button.getAttribute('data-preference'); //retrieving th eattributes in order
+   });
+   return preferenceOrder;
+}
+
+
+
+  
+
+// Function to calculate the score for a user
+function calculateScore(inputUser, user) {
+    let score = 0;
+
+
+    const preferenceOrder = retrievePreferenceOrder();
+   //attribute weight is decided based on preference order of user
+    // Calculate score based on preference order
+    preferenceOrder.forEach((attribute, index) => {
+        const attributeWeight = preferenceOrder.length - index; // Assign higher weights to attributes higher in preference order
+        switch (attribute) {
+            case 'Hobbies':
+                const commonHobbies = inputUser['Hobbies'].filter(hobby => user['Hobbies'].includes(hobby));
+                score += commonHobbies.length * attributeWeight * 5;
+                break;
+            case 'Interests':
+                const commonInterests = inputUser['Interests'].filter(interest => user['Interests'].includes(interest));
+                score += commonInterests.length * attributeWeight * 5;
+                break;
+            case 'Age':
+                const ageDifference = Math.abs(inputUser['Age'] - user['Age']);
+                const ageScore = (10 - ageDifference) * attributeWeight; // Score decreases as age difference increases
+                score += Math.max(0, ageScore);
+                break;
+            case 'Year of Study':
+                if (inputUser['Year of Study'] === user['Year of Study']) score += 10 * attributeWeight;
+                break;
+            default:
+                // Handle unexpected preference order attributes
+                break;
+        }
+    });
+
+    return score;
+}
+
+// Function to find the perfect match
+function findPerfectMatch(inputUser, usersData) {
+    let bestMatch = null;
+    let maxScore = -1;
+
+    
+    const inputRollNumber = inputUser['IITB Roll Number'];
+
+    // Iterate through each user in the data
+    usersData.forEach(user => {
+        // Avoid self-matching
+        if (user['IITB Roll Number'] === inputRollNumber) return;
+
+        // Check if gender matches the preference
+        const inputGender = inputUser['Gender'];
+        const userGender = user['Gender'];
+        if (inputGender === 'Male' && userGender === 'Female' ||
+            inputGender === 'Female' && userGender === 'Male' ||
+            (inputGender === 'Other' && (userGender === 'Male' || userGender === 'Female'))) {
+            // Calculate score for the user
+            const score = calculateScore(inputUser, user);
+
+            // Update best match if the score is higher or if scores are equal but user has higher preference attribute score
+            if (score > maxScore || (score === maxScore && compareByPreference(inputUser, user, bestMatch))) {
+                maxScore = score;
+                bestMatch = user;
+            }
+        }
+    });
+
+    // Return null if no match meets the base condition
+    if (maxScore <= 0) return null;
+
+    return bestMatch;
+}
+
+// Helper function to compare users based on preference order
+function compareByPreference(inputUser, user1, user2) {
+    const preferenceOrder = retrievePreferenceOrder();
+    for (let attribute of preferenceOrder) {
+        if (user1[attribute] !== user2[attribute]) {
+            return user1[attribute] > user2[attribute]; // Compare attribute values
+        }
+    }
+    return false; // Return false if both users have identical attribute scores
+}
+
+// Function to handle form submission
+async function match(event) {
+    event.preventDefault();
+
+    // Collect input data from the form
+    const inputUser = {
+        "IITB Roll Number": document.getElementById('rollNumber').value,
+        "Name": document.getElementById('name').value,
+        "Year of Study": document.getElementById('year').value,
+        "Age": parseInt(document.getElementById('age').value),
+        "Gender": document.querySelector('.gender-button.active').dataset.gender,
+        "Interests": document.getElementById('selected-interests').value.split(','),
+        "Hobbies": document.getElementById('selected-hobbies').value.split(','),
+        "Email": document.getElementById('email').value,
+        "Photo": await getBase64FromFile(document.getElementById('photo').files[0]) 
+    };
+
+    try {
+        // Fetch users data from a JSON file
+        const response = await fetch('students.json');
+        if (!response.ok) {
+            throw new Error('Failed to fetch users data');
+        }
+        const usersData = await response.json();
+
+        // Find the perfect match
+        const perfectMatch = findPerfectMatch(inputUser, usersData);
+
+        if (perfectMatch) {
+            // Redirect to output.html and pass the perfect match data
+            localStorage.setItem('perfectMatch', JSON.stringify(perfectMatch));
+            window.location.href = "output.html";
+        } else {
+            // Handle no match case
+            window.location.href = "no-match.html";
+            
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+
+
+// Helper function to convert a file to a base64-encoded string
+function getBase64FromFile(file) {
+ return new Promise((resolve, reject) => {
+   const reader = new FileReader();
+   reader.onload = () => resolve(reader.result);
+   reader.onerror = reject;
+   reader.readAsDataURL(file);
+ });
+}
+
+   
+</script>
+</html>

@@ -1,0 +1,128 @@
+[
+  {
+    "IITB Roll Number": "2023001",
+    "Name": "Aryan Sharma",
+    "Year of Study": "3rd",
+    "Age": 21,
+    "Gender": "Male",
+    "Interests": [
+      "Traveling",
+      "Music"
+    ],
+    "Hobbies": [
+      "Reading",
+      "Playing musical instruments"
+    ],
+    "Email": "aryan@example.com",
+    "Photo": "photos/aryan_sharma.png",
+    "para": "Myself Aryan Sharma. My curiosity leads me to explore various hobbies and interests.  I have a keen interest in traveling. For me, traveling is not just about seeing new places but also about connecting with people from different backgrounds.  I am also interested in music. Discovering hidden gems in the music industry and sharing them with others brings me joy and fulfillment. I have a variety of hobbies, such as reading and playing musical instruments."
+  },
+  {
+    "IITB Roll Number": "2023002",
+    "Name": "Aditi Singh",
+    "Year of Study": "2nd",
+    "Age": 20,
+    "Gender": "Female",
+    "Interests": [
+      "Movies",
+      "Art"
+    ],
+    "Hobbies": [
+      "Cooking",
+      "Painting"
+    ],
+    "Email": "aditi@example.com",
+    "Photo": "photos/aditi_singh.png",
+    "para": "I am Aditi Singh. I am passionate about exploring various hobbies and interests.  I really enjoy engaging myself in movies. Watching movies is one of my favorite pastimes.  I also like exploring the wonders of art. Art has always been a passion of mine, and I love exploring different artistic mediums. I like to keep busy with hobbies like cooking and painting."
+  },
+  {
+    "IITB Roll Number": "2023003",
+    "Name": "Rahul Patel",
+    "Year of Study": "4th",
+    "Age": 22,
+    "Gender": "Male",
+    "Interests": [
+      "Technology",
+      "Sports"
+    ],
+    "Hobbies": [
+      "Coding",
+      "Watching YouTube/Instagram"
+    ],
+    "Email": "rahul@example.com",
+    "Photo": "photos/rahul_patel.png",
+    "para": "My name is Rahul Patel. Exploring a wide range of hobbies is something I find fascinating.  I have a keen interest in technology. I enjoy staying up-to-date with tech news and trends to understand how technology impacts our lives.  I also find joy in sports. Watching sports events is a great way for me to unwind and relax. A few of my hobbies include coding and watching youtube/instagram."
+  },
+  {
+    "IITB Roll Number": "2023004",
+    "Name": "Sneha Desai",
+    "Year of Study": "1st",
+    "Age": 19,
+    "Gender": "Female",
+    "Interests": [
+      "Literature",
+      "Fashion"
+    ],
+    "Hobbies": [
+      "Gardening",
+      "Painting"
+    ],
+    "Email": "sneha@example.com",
+    "Photo": "photos/sneha_desai.png",
+    "para": "My name is Sneha Desai. As an enthusiast of diverse interests, I enjoy exploring various fields.  One of my passions is literature. Discussing literature with fellow book lovers is one of my favorite things to do.  Another interest of mine is fashion. I find joy in curating outfits that reflect my personality and mood. A few of my hobbies include gardening and painting."
+  },
+  {
+    "IITB Roll Number": "2023005",
+    "Name": "Rohan Gupta",
+    "Year of Study": "3rd",
+    "Age": 21,
+    "Gender": "Male",
+    "Interests": [
+      "Movies",
+      "Technology"
+    ],
+    "Hobbies": [
+      "Playing musical instruments",
+      "Watching YouTube/Instagram"
+    ],
+    "Email": "rohan@example.com",
+    "Photo": "photos/rohan_gupta.jpg",
+    "para": "I am Rohan Gupta. As an enthusiast of diverse interests, I enjoy exploring various fields.  One of my passions is movies. I enjoy a wide range of genres, from action-packed blockbusters to thought-provoking dramas.  Another interest of mine is technology. Exploring the intersection of technology and other fields, such as healthcare and education, fascinates me. Some of my hobbies include playing musical instruments and watching youtube/instagram."
+  },
+  {
+    "IITB Roll Number": "2023006",
+    "Name": "Neha Reddy",
+    "Year of Study": "4th",
+    "Age": 22,
+    "Gender": "Female",
+    "Interests": [
+      "Art",
+      "Music"
+    ],
+    "Hobbies": [
+      "Reading",
+      "Painting"
+    ],
+    "Email": "neha@example.com",
+    "Photo": "photos/neha_reddy.png",
+    "para": "My name is Neha Reddy. As an enthusiast of diverse interests, I enjoy exploring various fields.  I have a keen interest in art. Sharing my art with others and receiving feedback enriches my creative process and encourages growth.  Another interest of mine is music. Listening to music is my go-to way to relax and unwind. I like to keep busy with hobbies like reading and painting."
+  },
+  {
+    "IITB Roll Number": "2023007",
+    "Name": "Vivek Kumar",
+    "Year of Study": "2nd",
+    "Age": 20,
+    "Gender": "Male",
+    "Interests": [
+      "Sports",
+      "Technology"
+    ],
+    "Hobbies": [
+      "Coding",
+      "Watching YouTube/Instagram"
+    ],
+    "Email": "vivek@example.com",
+    "Photo": "photos/vivek_kumar.jpg",
+    "para": "I am Vivek Kumar. Exploring a wide range of hobbies is something I find fascinating.  I have a keen interest in sports. The sense of achievement after overcoming a tough challenge in sports is unparalleled.  I also like exploring the wonders of technology. Technology empowers individuals and communities by providing access to information and resources. A few of my hobbies include coding and watching youtube/instagram."
+  }
+]

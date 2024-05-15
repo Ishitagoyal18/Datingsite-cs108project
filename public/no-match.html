@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Match Found</title>
+    <style>
+        /* Basic reset and box-sizing setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #140e2f; /* Adjust if necessary to fit the theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    color: #fff;
+    -webkit-text-stroke-width: 1px; /* Slightly thinner text stroke */
+    -webkit-text-stroke-color: #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    text-align: left;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+}
+
+.button {
+    background-color:#e0e1dd; /* Soft purple, consider other colors if needed */
+    color: #413e4f;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.container {
+    width: 90%; 
+    max-width: 600px; 
+    text-align: center;
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 10px;
+    background: #ffffffdd; 
+    animation: fadeIn 0.5s ease-out;
+    margin-top: 50px; 
+}
+
+.message-box {
+    padding: 60px 40px; 
+}
+
+.header {
+    font-size: 28px; 
+    color: #333;
+    margin-bottom: 30px; 
+    animation: fadeInDown 1s ease-out;
+}
+
+.message {
+    font-size: 18px; 
+    color: #555;
+    animation: fadeInUp 1s ease-out;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #e0e1dd 1px, transparent 1px),
+        radial-gradient(circle, #e0e1dd 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button class="button" onclick="input()">Try Again</button>
+        <button class="button" onclick="logout()">Logout</button>
+    </div>
+    <div class="logo animate_animated animate_fadeInDown">CLOVER</div>
+    <div class="container animate_animated animate_zoomIn">
+        <div class="message-box">
+            <h1 class="header">Sorry, no match found 😢</h1>
+            <p class="message">We will notify you as soon as we find a perfect match for you 🔔.</p>
+        </div>
+    </div>
+</body>
+<script>
+     function logout() {
+            window.location.href = "index.html";
+        }
+
+        function input() {
+            window.location.href = "input.html";
+        }
+
+</script>
+</html>
